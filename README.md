@@ -1,7 +1,22 @@
 # DiffCSE: Difference-based Contrastive Learning for Sentence Embeddings
 
+To be published in [**NAACL 2022**](https://2022.naacl.org/)
+
+[Yung-Sung Chuang](https://people.csail.mit.edu/yungsung/), 
+[Rumen Dangovski](http://super-ms.mit.edu/rumen.html),
+[Hongyin Luo](http://people.csail.mit.edu/hyluo/),
+[Yang Zhang](https://mitibmwatsonailab.mit.edu/people/yang-zhang/),
+[Shiyu Chang](https://code-terminator.github.io/),
+[Marin Soljacic](http://www.mit.edu/~soljacic/marin.html),
+[Shang-Wen Li](https://swdanielli.github.io/),
+[Scott Wen-tau Yih](https://scottyih.org/),
+[Yoon Kim](https://people.csail.mit.edu/yoonkim/),
+[James Glass](http://groups.csail.mit.edu/sls/people/glass.shtml)
+
 ## Overview
 ![DiffCSE](diffcse.png)
+
+We propose DiffCSE, an unsupervised contrastive learning framework for learning sentence embeddings. DiffCSE learns sentence embeddings that are sensitive to the difference between the original sentence and an edited sentence, where the edited sentence is obtained by stochastically masking out the original sentence and then sampling from a masked language model. We show that DiffSCE is an instance of equivariant contrastive learning [(Dangovski et al., 2021)](https://arxiv.org/abs/2111.00899), which generalizes contrastive learning and learns representations that are insensitive to certain types of augmentations and sensitive to other __"harmful"__ types of augmentations. Our experiments show that DiffCSE achieves state-of-the-art results among unsupervised sentence representation learning methods, outperforming unsupervised SimCSE by 2.3 absolute points on semantic textual similarity tasks. 
 
 ## Setups
 
