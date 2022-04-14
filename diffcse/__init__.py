@@ -1,1 +1,1 @@
-from .tool import SimCSE
+from .tool import DiffCSE
