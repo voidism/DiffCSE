@@ -109,11 +109,10 @@ For more detailed information, please check [SimCSE's GitHub repo](https://githu
 * DiffCSE-RoBERTa-base (STS): https://huggingface.co/voidism/diffcse-roberta-base-sts
 * DiffCSE-RoBERTa-base (transfer tasks): https://huggingface.co/voidism/diffcse-roberta-base-trans
 
-We can load the models using the API provided by SimCSE:
+We can load the models using the API provided by [SimCSE](https://github.com/princeton-nlp/SimCSE). 
+See [Getting Started](https://github.com/princeton-nlp/SimCSE#getting-started) for more information.
 
-```
+```python
 from diffcse import DiffCSE
 model = DiffCSE("voidism/diffcse-bert-base-uncased-sts")
 ```
-
-See [SimCSE](https://github.com/princeton-nlp/SimCSE#getting-started) for more information.
