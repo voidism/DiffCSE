@@ -1,5 +1,8 @@
 # DiffCSE: Difference-based Contrastive Learning for Sentence Embeddings
 
+## Overview
+![DiffCSE](diffcse.png)
+
 ## Setups
 
 ### Requirements
