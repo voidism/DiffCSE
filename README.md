@@ -104,13 +104,16 @@ For more detailed information, please check [SimCSE's GitHub repo](https://githu
 
 ## Pretrained models
 
-* DiffCSE-BERT-base (STS): https://drive.google.com/file/d/1CIxxsruPsscrOJPT42FIgyQBaOe5xrAj/view?usp=sharing
-* DiffCSE-BERT-base (transfer tasks): https://drive.google.com/file/d/1IzUs3Xa6Be4t2t0TZIPb-dfnD54pneHw/view?usp=sharing
-* DiffCSE-RoBERTa-base (STS): https://drive.google.com/file/d/1qHEs0TAOMkLQR4t_2VM5g4ePWOseE81j/view?usp=sharing
-* DiffCSE-RoBERTa-base (transfer tasks): https://drive.google.com/file/d/1vGsjkYQU2w_n4_cUy2u9T5ywSo1Vq4Pl/view?usp=sharing
+* DiffCSE-BERT-base (STS): https://huggingface.co/voidism/diffcse-bert-base-uncased-sts
+* DiffCSE-BERT-base (transfer tasks): https://huggingface.co/voidism/diffcse-bert-base-uncased-trans
+* DiffCSE-RoBERTa-base (STS): https://huggingface.co/voidism/diffcse-roberta-base-sts
+* DiffCSE-RoBERTa-base (transfer tasks): https://huggingface.co/voidism/diffcse-roberta-base-trans
 
-You can use [gdown](https://pypi.org/project/gdown/) to download them. And then use
+We can load the models using the API provided by SimCSE:
+
 ```
-tar zxvf [downloaded tar.gz file]
+from diffcse import DiffCSE
+model = DiffCSE("voidism/diffcse-bert-base-uncased-sts")
 ```
-to extract the models.
+
+See [SimCSE](https://github.com/princeton-nlp/SimCSE#getting-started) for more information.
