@@ -28,7 +28,7 @@ We propose DiffCSE, an unsupervised contrastive learning framework for learning 
 cd transformers-4.2.1
 pip install .
 ```
-> If you have already install transformers==4.2.1 through pip, you need to put `modeling_bert.py` into `<your_python_env>/site-packages/transformers/models/bert/modeling_bert.py` and `modeling_roberta.py` into `<your_python_env>/site-packages/transformers/models/bert/modeling_roberta.py`.
+> If you have already installed `transformers==4.2.1` through pip, you need to put `modeling_bert.py` into `<your_python_env>/site-packages/transformers/models/bert/modeling_bert.py` and `modeling_roberta.py` into `<your_python_env>/site-packages/transformers/models/bert/modeling_roberta.py`.
 > We modify these two files in the package so that we can perform _conditional_ pretraining tasks using BERT/RoBERTa. If possible, please directly pip install our customized Transformers package.
 
 ### Install other packages
