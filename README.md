@@ -88,7 +88,7 @@ Arguments from [SimCSE](https://github.com/princeton-nlp/SimCSE):
 * `--pooler_type`: Pooling method.
 * `--mlp_only_train`: For unsupervised SimCSE or DiffCSE, it works better to train the model with MLP layer but test the model without it. You should use this argument when training unsupervised SimCSE/DiffCSE models.
 
-For results in the paper, we use Nvidia 2080Ti GPUs with CUDA 11.2. Using different types of devices or different versions of CUDA/other softwares may lead to slightly different performance.
+For the results in our paper, we use a NVidia 2080Ti GPU with CUDA 11.2. Using different types of devices or different versions of CUDA/other softwares may lead to slightly different performance.
 
 ## Evaluation
 ```bash
@@ -114,5 +114,8 @@ See [Getting Started](https://github.com/princeton-nlp/SimCSE#getting-started) f
 
 ```python
 from diffcse import DiffCSE
-model = DiffCSE("voidism/diffcse-bert-base-uncased-sts")
+model_bert_sts = DiffCSE("voidism/diffcse-bert-base-uncased-sts")
+model_bert_trans = DiffCSE("voidism/diffcse-bert-base-uncased-trans")
+model_roberta_sts = DiffCSE("voidism/diffcse-roberta-base-sts")
+model_roberta_trans = DiffCSE("voidism/diffcse-roberta-base-trans")
 ```
