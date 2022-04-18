@@ -177,7 +177,7 @@ def cl_forward(cls,
             pooler_output = pooler_output.view((batch_size*num_sent, pooler_output.size(-1))) # (bs, num_sent, hidden)
             pooler_output = cls.mlp(pooler_output)
             pooler_output = pooler_output.view((batch_size, num_sent, pooler_output.size(-1))) # (bs, num_sent, hidden)
-    # MLM auxiliary objective
+    # Produce MLM augmentations and perform conditional ELECTRA using the discriminator
     if mlm_input_ids is not None:
         mlm_input_ids = mlm_input_ids.view((-1, mlm_input_ids.size(-1)))
         with torch.no_grad():
@@ -186,7 +186,7 @@ def cl_forward(cls,
         replaced = (g_pred != input_ids) * attention_mask
         e_inputs = g_pred * attention_mask
 
-        mlm_outputs = cls.aux_bert(
+        mlm_outputs = cls.discriminator(
             e_inputs,
             attention_mask=attention_mask,
             token_type_ids=token_type_ids,
@@ -256,7 +256,7 @@ def cl_forward(cls,
 
     loss = loss_fct(cos_sim, labels)
 
-    # Calculate loss for MLM
+    # Calculate loss for conditional ELECTRA
     if mlm_outputs is not None and mlm_labels is not None:
         # mlm_labels = mlm_labels.view(-1, mlm_labels.size(-1))
         e_labels = replaced.view(-1, replaced.size(-1))
@@ -335,7 +335,7 @@ class BertForCL(BertPreTrainedModel):
         self.bert = BertModel(config, add_pooling_layer=False)
 
         self.lm_head = BertLMPredictionHead(config)
-        self.aux_bert = BertModel(config, add_pooling_layer=False)
+        self.discriminator = BertModel(config, add_pooling_layer=False)
 
         cl_init(self, config)
 
@@ -395,7 +395,7 @@ class RobertaForCL(RobertaPreTrainedModel):
         self.roberta = RobertaModel(config, add_pooling_layer=False)
 
         self.lm_head = RobertaLMHead(config)
-        self.aux_bert = RobertaModel(config, add_pooling_layer=False)
+        self.discriminator = RobertaModel(config, add_pooling_layer=False)
 
         cl_init(self, config)
 

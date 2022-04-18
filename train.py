@@ -59,8 +59,7 @@ class ModelArguments:
     generator_name: Optional[str] = field(
         default=None,
         metadata={
-            "help": "The model checkpoint for weights initialization."
-            "Don't set if you want to train a model from scratch."
+            "help": "The model checkpoint for weights of the generator model."
         },
     )
     model_type: Optional[str] = field(
@@ -92,8 +91,6 @@ class ModelArguments:
             "with private models)."
         },
     )
-
-    # SimCSE's arguments
     temp: float = field(
         default=0.05,
         metadata={
@@ -133,18 +130,12 @@ class ModelArguments:
     before_mlp: bool = field(
         default=False,
         metadata={
-            "help": "Use the embedding before MLP for MLM task"
-        }
-    )
-    aux_bert: bool = field(
-        default=False,
-        metadata={
-            "help": "Use another BERT model for MLM task"
+            "help": "Use the embedding before MLP for the conditional electra task"
         }
     )
     masking_ratio: float = field(
         default=0.15, 
-        metadata={"help": "Ratio of tokens to mask for MLM (only effective if --do_mlm)"}
+        metadata={"help": "Ratio of tokens to mask for MLM"}
     )
 
 
@@ -380,7 +371,7 @@ def main():
             pretrained_model = RobertaForMaskedLM.from_pretrained(model_args.model_name_or_path)
             # model.lm_head.load_state_dict(pretrained_model.cls.predictions.state_dict())
             model.electra_head = torch.nn.Linear(768, 2)
-            model.aux_bert.load_state_dict(pretrained_model.roberta.state_dict(), strict=False)
+            model.discriminator.load_state_dict(pretrained_model.roberta.state_dict(), strict=False)
         elif 'bert' in model_args.model_name_or_path:
             model = BertForCL.from_pretrained(
                 model_args.model_name_or_path,
@@ -394,7 +385,7 @@ def main():
             pretrained_model = BertForPreTraining.from_pretrained(model_args.model_name_or_path)
             # model.lm_head.load_state_dict(pretrained_model.cls.predictions.state_dict())
             model.electra_head = torch.nn.Linear(768, 2)
-            model.aux_bert.load_state_dict(pretrained_model.bert.state_dict(), strict=False)
+            model.discriminator.load_state_dict(pretrained_model.bert.state_dict(), strict=False)
         else:
             raise NotImplementedError
     else:
