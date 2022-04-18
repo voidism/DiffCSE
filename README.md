@@ -55,7 +55,7 @@ python train.py \
     --model_name_or_path bert-base-uncased \
     --train_file data/wiki1m_for_simcse.txt \
     --output_dir <your_output_model_dir> \
-    --num_train_epochs 1 \
+    --num_train_epochs 2 \
     --per_device_train_batch_size 64 \
     --learning_rate 7e-6 \
     --max_seq_length 32 \
@@ -91,7 +91,6 @@ Arguments from [SimCSE](https://github.com/princeton-nlp/SimCSE):
 For the results in our paper, we use a NVidia 2080Ti GPU with CUDA 11.2. Using different types of devices or different versions of CUDA/other softwares may lead to slightly different performance.
 
 ## Evaluation
-### Script
 ```bash
 python evaluation.py \
     --model_name_or_path <your_output_model_dir> \

@@ -8,7 +8,7 @@ python train.py \
     --model_name_or_path bert-base-uncased \
     --train_file data/wiki1m_for_simcse.txt \
     --output_dir your_output_dir \
-    --num_train_epochs 1 \
+    --num_train_epochs 2 \
     --per_device_train_batch_size 64 \
     --learning_rate $LR \
     --max_seq_length 32 \
