@@ -91,11 +91,54 @@ Arguments from [SimCSE](https://github.com/princeton-nlp/SimCSE):
 For the results in our paper, we use a NVidia 2080Ti GPU with CUDA 11.2. Using different types of devices or different versions of CUDA/other softwares may lead to slightly different performance.
 
 ## Evaluation
+### Script
 ```bash
 python evaluation.py \
     --model_name_or_path <your_output_model_dir> \
     --pooler cls_before_pooler \
+    --task_set <sts|transfer|full> \
+    --mode test
+```
+
+To evaluate our pretrained DiffCSE checkpoints, we can use the following scripts.
+
+### BERT 
+#### STS
+
+```bash
+python evaluation.py \
+    --model_name_or_path voidism/diffcse-bert-base-uncased-sts \
+    --pooler cls_before_pooler \
     --task_set sts \
+    --mode test
+```
+#### Transfer Tasks
+
+```bash
+python evaluation.py \
+    --model_name_or_path voidism/diffcse-bert-base-uncased-trans \
+    --pooler cls_before_pooler \
+    --task_set transfer \
+    --mode test
+```
+
+### RoBERTa 
+#### STS
+
+```bash
+python evaluation.py \
+    --model_name_or_path voidism/diffcse-roberta-base-sts \
+    --pooler cls_before_pooler \
+    --task_set sts \
+    --mode test
+```
+#### Transfer Tasks
+
+```bash
+python evaluation.py \
+    --model_name_or_path voidism/diffcse-roberta-base-trans \
+    --pooler cls_before_pooler \
+    --task_set transfer \
     --mode test
 ```
 
@@ -118,4 +161,23 @@ model_bert_sts = DiffCSE("voidism/diffcse-bert-base-uncased-sts")
 model_bert_trans = DiffCSE("voidism/diffcse-bert-base-uncased-trans")
 model_roberta_sts = DiffCSE("voidism/diffcse-roberta-base-sts")
 model_roberta_trans = DiffCSE("voidism/diffcse-roberta-base-trans")
+```
+
+## Citation
+
+Please cite our paper and the SimCSE paper if they are helpful to your work!
+
+```bibtex
+@inproceedings{chuang2022diffcse,
+   title={{DiffCSE}: Difference-based Contrastive Learning for Sentence Embeddings},
+   author={Chuang, Yung-Sung and Dangovski, Rumen and Luo, Hongyin and Zhang, Yang and Chang, Shiyu and Soljacic, Marin and Li, Shang-Wen and Yih, Wen-tau and Kim, Yoon and Glass, James},
+   booktitle={Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL)},
+   year={2022}
+}
+@inproceedings{gao2021simcse,
+   title={{SimCSE}: Simple Contrastive Learning of Sentence Embeddings},
+   author={Gao, Tianyu and Yao, Xingcheng and Chen, Danqi},
+   booktitle={Empirical Methods in Natural Language Processing (EMNLP)},
+   year={2021}
+}
 ```
