@@ -1,10 +1,11 @@
 # DiffCSE: Difference-based Contrastive Learning for Sentence Embeddings
 
-[![Version](https://img.shields.io/badge/version-v0.1.0-blue?color=FF8000?color=009922)](https://img.shields.io/badge/version-v0.1.0-blue)
+[![Version](https://img.shields.io/badge/version-v0.1.0-blue?color=FF8000?color=009922)](https://img.shields.io/badge/Version-v0.1.0-blue)
 [![Stars](https://img.shields.io/github/stars/voidism/DiffCSE)](https://github.com/voidism/DiffCSE/stargazers)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Arxiv](https://img.shields.io/badge/arxiv-2204.10298-red)](https://arxiv.org/abs/2204.10298)
+[![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT)
+[![Arxiv](https://img.shields.io/badge/arXiv-2204.10298-red)](https://arxiv.org/abs/2204.10298)
 [![Hugging Face Models](https://img.shields.io/badge/%F0%9F%A4%97-Models-yellow)](https://huggingface.co/voidism)
+[![Hugging Face TF](https://img.shields.io/badge/%F0%9F%A4%97-Transformers-pink?color=FF33CC)](https://github.com/huggingface/transformers)
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/YungSungChuang/status/1517518077902000129)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/voidism/DiffCSE/blob/master/diffcse_evaluation.ipynb)
@@ -34,6 +35,9 @@ Our code is mainly based on the code of [SimCSE](https://arxiv.org/abs/2104.0882
 We propose DiffCSE, an unsupervised contrastive learning framework for learning sentence embeddings. DiffCSE learns sentence embeddings that are sensitive to the difference between the original sentence and an edited sentence, where the edited sentence is obtained by stochastically masking out the original sentence and then sampling from a masked language model. We show that DiffSCE is an instance of equivariant contrastive learning [(Dangovski et al., 2021)](https://arxiv.org/abs/2111.00899), which generalizes contrastive learning and learns representations that are insensitive to certain types of augmentations and sensitive to other "harmful" types of augmentations. Our experiments show that DiffCSE achieves state-of-the-art results among unsupervised sentence representation learning methods, outperforming unsupervised SimCSE by 2.3 absolute points on semantic textual similarity tasks. 
 
 ## Setups
+
+[![python](https://img.shields.io/badge/python-3.9.5-blue.svg)](https://www.python.org/downloads/release/python-395/)
+[![pytorch](https://img.shields.io/badge/pytorch-1.7.1-orange.svg)](https://pytorch.org/get-started/previous-versions/)
 
 ### Requirements
 * Python 3.9.5
@@ -109,7 +113,7 @@ For the results in our paper, we use a NVidia 2080Ti GPU with CUDA 11.2. Using d
 
  
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/voidism/DiffCSE/blob/master/diffcse_evaluation.ipynb)  
-We provide a simple colab notebook to reproduce our results easily! Or you can run the commands below:
+We provide a simple colab notebook to reproduce our results easily. We can also run the commands below for evaluation:
 
 ```bash
 python evaluation.py \
@@ -166,6 +170,8 @@ For more detailed information, please check [SimCSE's GitHub repo](https://githu
 
 ## Pretrained models
 
+[![Hugging Face Models](https://img.shields.io/badge/%F0%9F%A4%97-Models-yellow)](https://huggingface.co/voidism)
+
 * DiffCSE-BERT-base (STS): https://huggingface.co/voidism/diffcse-bert-base-uncased-sts
 * DiffCSE-BERT-base (transfer tasks): https://huggingface.co/voidism/diffcse-bert-base-uncased-trans
 * DiffCSE-RoBERTa-base (STS): https://huggingface.co/voidism/diffcse-roberta-base-sts
@@ -183,6 +189,8 @@ model_roberta_trans = DiffCSE("voidism/diffcse-roberta-base-trans")
 ```
 
 ## Citation
+
+[![DOI](https://img.shields.io/badge/DOI-10.48550/arXiv.2204.10298-green?color=FF8000?color=009922)](https://doi.org/10.48550/arXiv.2204.10298)
 
 Please cite our paper and the SimCSE paper if they are helpful to your work!
 
