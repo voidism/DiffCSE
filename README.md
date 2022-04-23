@@ -1,5 +1,15 @@
 # DiffCSE: Difference-based Contrastive Learning for Sentence Embeddings
 
+[![Version](https://img.shields.io/badge/version-v0.1.0-blue?color=FF8000?color=009922)](https://img.shields.io/badge/version-v0.1.0-blue)
+[![Stars](https://img.shields.io/github/stars/voidism/DiffCSE)](https://github.com/voidism/DiffCSE/stargazers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Arxiv](https://img.shields.io/badge/arxiv-2204.10298-red)](https://arxiv.org/abs/2204.10298)
+[![Hugging Face Models](https://img.shields.io/badge/%F0%9F%A4%97-Models-yellow)](https://huggingface.co/voidism)
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/YungSungChuang/status/1517518077902000129)
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]()
+
+
 arXiv link: https://arxiv.org/abs/2204.10298  
 To be published in [**NAACL 2022**](https://2022.naacl.org/)
 
