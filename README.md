@@ -7,7 +7,7 @@
 [![Hugging Face Models](https://img.shields.io/badge/%F0%9F%A4%97-Models-yellow)](https://huggingface.co/voidism)
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/YungSungChuang/status/1517518077902000129)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]()
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/voidism/DiffCSE/blob/master/diffcse_evaluation.ipynb)
 
 
 arXiv link: https://arxiv.org/abs/2204.10298  
@@ -106,6 +106,11 @@ Arguments from [SimCSE](https://github.com/princeton-nlp/SimCSE):
 For the results in our paper, we use a NVidia 2080Ti GPU with CUDA 11.2. Using different types of devices or different versions of CUDA/Python/PyTorch may lead to slightly different performance.
 
 ## Evaluation
+
+ 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/voidism/DiffCSE/blob/master/diffcse_evaluation.ipynb)  
+We provide a simple colab notebook to reproduce our results easily! Or you can run the commands below:
+
 ```bash
 python evaluation.py \
     --model_name_or_path <your_output_model_dir> \
@@ -114,7 +119,7 @@ python evaluation.py \
     --mode test
 ```
 
-To evaluate our pretrained DiffCSE checkpoints, we can use the following scripts.
+To evaluate our pretrained DiffCSE checkpoints, we can use the following scripts:
 
 ### BERT 
 #### STS
