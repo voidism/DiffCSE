@@ -3,13 +3,12 @@
 [![Version](https://img.shields.io/badge/version-v0.1.0-blue?color=FF8000?color=009922)](https://img.shields.io/badge/Version-v0.1.0-blue)
 [![Stars](https://img.shields.io/github/stars/voidism/DiffCSE)](https://github.com/voidism/DiffCSE/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT)
-[![Arxiv](https://img.shields.io/badge/arXiv-2204.10298-red)](https://arxiv.org/abs/2204.10298)
+[![Arxiv](https://img.shields.io/badge/arXiv-2204.10298-B21A1B)](https://arxiv.org/abs/2204.10298)
 [![Hugging Face Models](https://img.shields.io/badge/%F0%9F%A4%97-Models-yellow)](https://huggingface.co/voidism)
-[![Hugging Face TF](https://img.shields.io/badge/%F0%9F%A4%97-Transformers-pink?color=FF33CC)](https://github.com/huggingface/transformers)
+[![Hugging Face Transformers](https://img.shields.io/badge/%F0%9F%A4%97-Transformers-pink?color=FF33CC)](https://github.com/huggingface/transformers)
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/YungSungChuang/status/1517518077902000129)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/voidism/DiffCSE/blob/master/diffcse_evaluation.ipynb)
-
 
 arXiv link: https://arxiv.org/abs/2204.10298  
 To be published in [**NAACL 2022**](https://2022.naacl.org/)
@@ -36,8 +35,8 @@ We propose DiffCSE, an unsupervised contrastive learning framework for learning 
 
 ## Setups
 
-[![python](https://img.shields.io/badge/python-3.9.5-blue.svg)](https://www.python.org/downloads/release/python-395/)
-[![pytorch](https://img.shields.io/badge/pytorch-1.7.1-orange.svg)](https://pytorch.org/get-started/previous-versions/)
+[![Python](https://img.shields.io/badge/python-3.9.5-blue?logo=python&logoColor=FED643)](https://www.python.org/downloads/release/python-395/)
+[![Pytorch](https://img.shields.io/badge/pytorch-1.7.1-red?logo=pytorch)](https://pytorch.org/get-started/previous-versions/)
 
 ### Requirements
 * Python 3.9.5
