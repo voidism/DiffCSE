@@ -1,12 +1,12 @@
 # DiffCSE: Difference-based Contrastive Learning for Sentence Embeddings
 
-[![Version](https://img.shields.io/badge/version-v0.1.0-blue?color=FF8000?color=009922)](https://img.shields.io/badge/Version-v0.1.0-blue)
-[![Stars](https://img.shields.io/github/stars/voidism/DiffCSE)](https://github.com/voidism/DiffCSE/stargazers)
+[![Version](https://img.shields.io/badge/Version-v0.1.0-blue?color=FF8000?color=009922)](https://img.shields.io/badge/Version-v0.1.0-blue)
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT)
 [![Arxiv](https://img.shields.io/badge/arXiv-2204.10298-B21A1B)](https://arxiv.org/abs/2204.10298)
 [![Hugging Face Models](https://img.shields.io/badge/%F0%9F%A4%97-Models-yellow)](https://huggingface.co/voidism)
 [![Hugging Face Transformers](https://img.shields.io/badge/%F0%9F%A4%97-Transformers-pink?color=FF33CC)](https://github.com/huggingface/transformers)
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/YungSungChuang/status/1517518077902000129)
+[![GitHub Stars](https://img.shields.io/github/stars/voidism/DiffCSE?style=social)](https://github.com/voidism/DiffCSE/stargazers)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/voidism/DiffCSE/blob/master/diffcse_evaluation.ipynb)
 
@@ -187,7 +187,7 @@ model_roberta_sts = DiffCSE("voidism/diffcse-roberta-base-sts")
 model_roberta_trans = DiffCSE("voidism/diffcse-roberta-base-trans")
 ```
 
-## Citation
+## Citations
 
 [![DOI](https://img.shields.io/badge/DOI-10.48550/arXiv.2204.10298-green?color=FF8000?color=009922)](https://doi.org/10.48550/arXiv.2204.10298)
 
