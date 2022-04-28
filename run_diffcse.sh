@@ -6,6 +6,7 @@ LAMBDA=0.005
 
 python train.py \
     --model_name_or_path bert-base-uncased \
+    --generator_name distilbert-base-uncased \
     --train_file data/wiki1m_for_simcse.txt \
     --output_dir your_output_dir \
     --num_train_epochs 2 \

@@ -71,6 +71,7 @@ bash download_dataset.sh
 ```bash
 python train.py \
     --model_name_or_path bert-base-uncased \
+    --generator_name distilbert-base-uncased \
     --train_file data/wiki1m_for_simcse.txt \
     --output_dir <your_output_model_dir> \
     --num_train_epochs 2 \
@@ -97,6 +98,7 @@ python train.py \
 Our new arguments:
 * `--lambda_weight`: the lambda coefficient mentioned in Section 3 of our paper.
 * `--masking_ratio`: the masking ratio for MLM generator to randomly replace tokens.
+* `--generator_name`: the model name of generator. For `bert-base-uncased`, we use `distilbert-base-uncased`. For `roberta-base`, we use `distilroberta-base`.
 
 
 Arguments from [SimCSE](https://github.com/princeton-nlp/SimCSE):
