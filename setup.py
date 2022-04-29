@@ -15,7 +15,7 @@ setup(
     url='https://github.com/voidism/DiffCSE',
     download_url='https://github.com/voidism/DiffCSE/archive/refs/tags/v0.1.0.tar.gz',
     license='MIT',
-    packages=setuptools.find_packages(),
+    packages=find_packages(),
     install_requires=[
         "scipy==1.5.4",
         "datasets==1.2.1",
