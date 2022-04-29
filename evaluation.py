@@ -187,6 +187,12 @@ def main():
         task_names.append("Avg.")
         scores.append("%.2f" % (sum([float(score) for score in scores]) / len(scores)))
         print_table(task_names, scores)
+        if args.task_set == 'sts' or args.task_set == 'full':
+            output = "{"
+            for name, score in zip(task_names, scores):
+                output += '"'+name+'": ' + '"'+score+'"' + ', '
+            output = output[:-2] + '}'
+            print(output)
 
         task_names = []
         scores = []
@@ -199,6 +205,12 @@ def main():
         task_names.append("Avg.")
         scores.append("%.2f" % (sum([float(score) for score in scores]) / len(scores)))
         print_table(task_names, scores)
+        if args.task_set == 'transfer' or args.task_set == 'full':
+            output = "{"
+            for name, score in zip(task_names, scores):
+                output += '"'+name+'": ' + '"'+score+'"' + ', '
+            output = output[:-2] + '}'
+            print(output)
 
 
 if __name__ == "__main__":
