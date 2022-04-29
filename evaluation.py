@@ -188,11 +188,10 @@ def main():
         scores.append("%.2f" % (sum([float(score) for score in scores]) / len(scores)))
         print_table(task_names, scores)
         if args.task_set == 'sts' or args.task_set == 'full':
-            output = "{"
+            sts_output = "{"
             for name, score in zip(task_names, scores):
-                output += '"'+name+'": ' + '"'+score+'"' + ', '
-            output = output[:-2] + '}'
-            print(output)
+                sts_output += '"'+name+'": ' + '"'+score+'"' + ', '
+            sts_output = sts_output[:-2] + '}'
 
         task_names = []
         scores = []
@@ -206,11 +205,14 @@ def main():
         scores.append("%.2f" % (sum([float(score) for score in scores]) / len(scores)))
         print_table(task_names, scores)
         if args.task_set == 'transfer' or args.task_set == 'full':
-            output = "{"
+            trans_output = "{"
             for name, score in zip(task_names, scores):
-                output += '"'+name+'": ' + '"'+score+'"' + ', '
-            output = output[:-2] + '}'
-            print(output)
+                trans_output += '"'+name+'": ' + '"'+score+'"' + ', '
+            trans_output = trans_output[:-2] + '}'
+        if args.task_set == 'sts' or args.task_set == 'full':
+            print(sts_output)
+        if args.task_set == 'transfer' or args.task_set == 'full':
+            print(trans_output)
 
 
 if __name__ == "__main__":
