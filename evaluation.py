@@ -210,9 +210,9 @@ def main():
                 trans_output += '"'+name+'": ' + '"'+score+'"' + ', '
             trans_output = trans_output[:-2] + '}'
         if args.task_set == 'sts' or args.task_set == 'full':
-            print(sts_output)
+            print(args.model_name_or_path+' '+sts_output)
         if args.task_set == 'transfer' or args.task_set == 'full':
-            print(trans_output)
+            print(args.model_name_or_path+' '+trans_output)
 
 
 if __name__ == "__main__":
