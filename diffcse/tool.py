@@ -37,11 +37,9 @@ class DiffCSE(object):
 
         if pooler is not None:
             self.pooler = pooler
-        elif "unsup" in model_name_or_path:
-            logger.info("Use `cls_before_pooler` for unsupervised models. If you want to use other pooling policy, specify `pooler` argument.")
-            self.pooler = "cls_before_pooler"
         else:
-            self.pooler = "cls"
+            logger.info("Use `cls_before_pooler` for DiffCSE models. If you want to use other pooling policy, specify `pooler` argument.")
+            self.pooler = "cls_before_pooler"
     
     def encode(self, sentence: Union[str, List[str]], 
                 device: str = None, 
