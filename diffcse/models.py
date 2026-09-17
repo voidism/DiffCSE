@@ -269,7 +269,7 @@ def cl_forward(cls,
         cls.electra_fix_acc = float(1.0 - (prediction*fix).sum()/fix.sum())
         cls.electra_acc = float(((prediction == e_labels) * attention_mask).sum()/attention_mask.sum())
         # masked_lm_loss = loss_fct(prediction_scores.view(-1, cls.config.vocab_size), mlm_labels.view(-1))
-        masked_lm_loss = loss_fct(prediction_scores.view(-1, 2), e_labels.view(-1))
+        masked_lm_loss = loss_fct(prediction_scores.view(-1, 2), e_labels.masked_fill(attention_mask == 0, -100).view(-1))
         loss = loss + cls.model_args.lambda_weight * masked_lm_loss
 
     if not return_dict:
