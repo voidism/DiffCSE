@@ -511,11 +511,12 @@ class CLTrainer(Trainer):
                         tr_loss += self.training_step(model, inputs)
                 else:
                     tr_loss += self.training_step(model, inputs)
-                tr_pos_sim += model.sim.pos_avg
-                tr_neg_sim += model.sim.neg_avg
-                tr_others["electra_acc"] += model.electra_acc
-                tr_others["electra_rep_acc"] += model.electra_rep_acc
-                tr_others["electra_fix_acc"] += model.electra_fix_acc
+                metric_model = model.module if hasattr(model, "module") else model
+                tr_pos_sim += metric_model.sim.pos_avg
+                tr_neg_sim += metric_model.sim.neg_avg
+                tr_others["electra_acc"] += metric_model.electra_acc
+                tr_others["electra_rep_acc"] += metric_model.electra_rep_acc
+                tr_others["electra_fix_acc"] += metric_model.electra_fix_acc
                 self._total_flos += self.floating_point_ops(inputs)
 
                 if (step + 1) % self.args.gradient_accumulation_steps == 0 or (
