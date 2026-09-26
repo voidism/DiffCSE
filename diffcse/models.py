@@ -255,6 +255,9 @@ def cl_forward(cls,
         cos_sim = cos_sim + weights
 
     loss = loss_fct(cos_sim, labels)
+    # Compensate only the detached-gather contrastive term before adding RTD.
+    if dist.is_initialized() and cls.training:
+        loss = loss * dist.get_world_size()
 
     # Calculate loss for conditional ELECTRA
     if mlm_outputs is not None and mlm_labels is not None:
